@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.channels.NotYetConnectedException;
 import java.util.ArrayList;
 
 public class WeatherAPI {
@@ -18,18 +19,24 @@ public class WeatherAPI {
     static private String RESOLUTION = "res=3hourly&";
     static private String KEY = "key=5434136e-72e2-4a52-9b67-463430a9a83a";
 
-    private int temp;
+    private JSONArray jsonArray;
 
-    public void set(JSONObject jsonObject){
-        JSONArray l = (JSONArray) jsonObject.getJSONObject("SiteRep").getJSONObject("DV").
-                getJSONObject("Location").get("Period");
-        System.out.println(l.get(0));
+    public void get(int days_ahead, int threeHourIndex, String dataType){
+        if (jsonArray == null){
+            System.out.printf("Have not yet connected to the API");
+            throw new NotYetConnectedException();
+        }
+        JSONArray threeHourData = (JSONArray)jsonArray.getJSONObject(days_ahead).get("Rep");
+
+        // {"Pp":"4","S":"11","D":"SSW","T":"22","$":"720","U":"6","F":"20","V":"VG","G":"13","W":"7","H":"57"}
+        System.out.println(((JSONObject)threeHourData.get(threeHourIndex)).get(dataType));
     }
-    public void get(){
+
+    public void update(){
         String url_string = BASE_URL + CAMBRIDGE + RESOLUTION + KEY;
         URL url;
         HttpURLConnection con;
-        JSONObject jsonObject;
+        JSONObject jsonObject_new;
 
         try {
             url = new URL(url_string);
@@ -41,8 +48,8 @@ public class WeatherAPI {
                     con.getInputStream()));
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
-                jsonObject = new JSONObject(inputLine);
-                set(jsonObject);
+                jsonObject_new = new JSONObject(inputLine);
+                set(jsonObject_new);
             }
             in.close();
 
@@ -52,5 +59,10 @@ public class WeatherAPI {
         catch (JSONException err){
             err.printStackTrace();
         }
+    }
+
+    private void set(JSONObject jsonObject_new){
+        jsonArray = (JSONArray) jsonObject_new.getJSONObject("SiteRep").getJSONObject("DV").
+                getJSONObject("Location").get("Period");
     }
 }

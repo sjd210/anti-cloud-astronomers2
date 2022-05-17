@@ -24,7 +24,8 @@ public class MainScreen extends Application {
 
     public static void main(String[] args) {
         WeatherAPI w = new WeatherAPI();
-        w.get();
+        w.update();
+        w.get(0,0,"T");
        // launch();
     }
 }
