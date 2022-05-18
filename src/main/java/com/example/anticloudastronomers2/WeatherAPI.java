@@ -21,14 +21,28 @@ public class WeatherAPI {
 
     private JSONArray jsonArray;
 
-    public void get(int days_ahead, int threeHourIndex, String dataType){
+    public void get(int daysAhead, int threeHourIndex, String dataType){
         if (jsonArray == null){
             System.out.printf("Have not yet connected to the API");
             throw new NotYetConnectedException();
         }
-        JSONArray threeHourData = (JSONArray)jsonArray.getJSONObject(days_ahead).get("Rep");
 
-        // {"Pp":"4","S":"11","D":"SSW","T":"22","$":"720","U":"6","F":"20","V":"VG","G":"13","W":"7","H":"57"}
+        // daysAhead parameter is the number of days ahead starting from today as day zero
+        // threeHourIndex parameter gets which third hour you want the data for
+        // dataType parameter is the type of weather data requested
+
+        // "G" units="mph"      Wind Gust
+        // "T" units="C"        Temperature
+        // "V" units="m"        Visibility
+        // "D" units="compass"  Wind Direction
+        // "S" units="mph"      Wind Speed
+        // "W" units=""         Weather Type
+        // "P" units="hpa"      Pressure
+        // "Pt" units="Pa/s"    Pressure Tendency
+        // "Dp" units="C"       Dew Point
+        // "H" units="%"        Screen Relative Humidity
+
+        JSONArray threeHourData = (JSONArray)jsonArray.getJSONObject(daysAhead).get("Rep");
         System.out.println(((JSONObject)threeHourData.get(threeHourIndex)).get(dataType));
     }
 
