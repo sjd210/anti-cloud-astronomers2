@@ -8,9 +8,10 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="Home" mnemonicParsing="false" onAction="#btnHome" prefHeight="121.0" prefWidth="180.0" text="Button" />
-            <Button fx:id="Map" mnemonicParsing="false" onAction="#btnMap" prefHeight="118.0" prefWidth="194.0" text="Button" />
-            <Button fx:id="Settings" mnemonicParsing="false" onAction="#btnSettings" prefHeight="113.0" prefWidth="194.0" text="Button" />
+            <Button fx:id="Home" mnemonicParsing="false" onAction="#btnHome" prefHeight="99.0" prefWidth="138.0" text="Button" />
+            <Button fx:id="Map" mnemonicParsing="false" onAction="#btnMap" prefHeight="100.0" prefWidth="138.0" text="Button" />
+            <Button fx:id="Settings" mnemonicParsing="false" onAction="#btnSettings" prefHeight="100.0" prefWidth="138.0" text="Button" />
+            <Button fx:id="Calender" mnemonicParsing="false" onAction="#btnCalender" prefHeight="100.0" prefWidth="138.0" text="Button" />
          </children>
       </HBox>
    </top>

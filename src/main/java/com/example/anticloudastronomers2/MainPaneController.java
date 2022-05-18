@@ -33,7 +33,6 @@ public class MainPaneController implements Initializable {
 
     @FXML
     private void btnHome(ActionEvent event) throws IOException {
-        System.out.println("Ping");
         AnchorPane view = FXMLLoader.load(getClass().getResource("Home.fxml"));
         BorderPane.setCenter(view);
     }
@@ -47,6 +46,12 @@ public class MainPaneController implements Initializable {
     @FXML
     private void btnSettings(ActionEvent event) throws IOException {
         AnchorPane view = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        BorderPane.setCenter(view);
+    }
+
+    @FXML
+    private void btnCalender(ActionEvent event) throws IOException {
+        AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
         BorderPane.setCenter(view);
     }
 }
