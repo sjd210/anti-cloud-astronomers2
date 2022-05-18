@@ -56,7 +56,7 @@ public class WeatherAPI {
             url = new URL(url_string);
             con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
-            System.out.println(con);
+       //     System.out.println(con);
 
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));

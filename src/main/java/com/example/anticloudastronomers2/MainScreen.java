@@ -27,5 +27,9 @@ public class MainScreen extends Application {
         w.update();
         w.get(0,0,"T");
        // launch();
+
+        AstroWeatherAPI aw = new AstroWeatherAPI();
+        aw.update();
+        aw.get(3,"moonrise");
     }
 }
