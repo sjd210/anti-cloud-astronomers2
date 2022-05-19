@@ -97,36 +97,41 @@
    <center>
       <ScrollPane prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
          <content>
-            <HBox minWidth="-Infinity">
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #7eb5c4;">
                      <children>
-                        <ImageView fitHeight="181.0" fitWidth="154.0" layoutX="91.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun_clouds.png" />
                            </image>
                         </ImageView>
                         <Text layoutX="46.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" />
-                        <Text layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
+                        <Text fx:id="Temperature" layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
                         <Text layoutX="200.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud Cover" />
-                        <Text layoutX="223.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" />
+                        <Text fx:id="CloudCover" layoutX="223.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" />
                         <Text layoutX="200.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moon Phase" />
                         <Text layoutX="62.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset" />
-                        <Text layoutX="65.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:36" />
-                        <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="217.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+                        <Text fx:id="Sunset" layoutX="65.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:36" />
+                        <ImageView fx:id="MoonPhase" fitHeight="37.0" fitWidth="37.0" layoutX="217.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/moon.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="103.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY">
+                        <Text fx:id="CurrentDay" layoutX="103.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" textAlignment="CENTER">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Text>
                         <Line endX="335.0" startX="335.0" startY="369.0" />
+                        <Text fx:id="DayRating" fill="#2b9900" layoutX="95.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
                      </children>
                   </Pane>
-                  <Pane prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #604a61;">
+                  <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #604a61;">
                      <children>
                         <ImageView fitHeight="78.0" fitWidth="27.0" layoutX="152.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                            <image>
