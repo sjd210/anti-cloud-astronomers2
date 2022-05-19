@@ -41,6 +41,18 @@ public class WeatherAPI {
         // "Pt" units="Pa/s"    Pressure Tendency
         // "Dp" units="C"       Dew Point
         // "H" units="%"        Screen Relative Humidity
+        // "Pp" units="%"       Precipitation probability
+
+        //Param":[{"name":"F","units":"C","$":"Feels Like Temperature"},
+        // {"name":"G","units":"mph","$":"Wind Gust"},
+        // {"name":"H","units":"%","$":"Screen Relative Humidity"},
+        // {"name":"T","units":"C","$":"Temperature"},
+        // {"name":"V","units":"","$":"Visibility"},
+        // {"name":"D","units":"compass","$":"Wind Direction"},
+        // {"name":"S","units":"mph","$":"Wind Speed"},
+        // {"name":"U","units":"","$":"Max UV Index"},
+        // {"name":"W","units":"","$":"Weather Type"},
+        // {"name":"Pp","units":"%","$":"Precipitation Probability"}]}
 
         JSONArray threeHourData = (JSONArray)jsonArray.getJSONObject(daysAhead).get("Rep");
         System.out.println(((JSONObject)threeHourData.get(threeHourIndex)).get(dataType));
