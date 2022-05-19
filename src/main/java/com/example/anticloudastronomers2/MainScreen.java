@@ -23,6 +23,10 @@ public class MainScreen extends Application {
     }
 
     public static void main(String[] args) {
+        CloudCoverAPI c = new CloudCoverAPI();
+        c.update();
+        System.out.println(c.get(2,"cloudcover"));
+
         WeatherAPI w = new WeatherAPI();
         w.update();
         w.get(0,0,"T");
