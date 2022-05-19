@@ -30,7 +30,7 @@ public class AstroWeatherAPI {
         }
     }
 
-    public void get(int daysAhead, String dataType){
+    public String get(int daysAhead, String dataType){
         if (jsonArray == null){
             System.out.printf("Have not yet connected to the API");
             throw new NotYetConnectedException();
@@ -40,7 +40,7 @@ public class AstroWeatherAPI {
         // "moon_phase":"Full Moon","moon_illumination":"83"}
 
         String s = (String)jsonArray.get(daysAhead).get(dataType);
-        System.out.println(s);
+        return s;
     }
 
     public void update(){

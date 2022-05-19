@@ -21,7 +21,7 @@ public class WeatherAPI {
 
     private JSONArray jsonArray;
 
-    public void get(int daysAhead, int threeHourIndex, String dataType){
+    public String get(int daysAhead, int threeHourIndex, String dataType){
         if (jsonArray == null){
             System.out.printf("Have not yet connected to the API");
             throw new NotYetConnectedException();
@@ -55,7 +55,7 @@ public class WeatherAPI {
         // {"name":"Pp","units":"%","$":"Precipitation Probability"}]}
 
         JSONArray threeHourData = (JSONArray)jsonArray.getJSONObject(daysAhead).get("Rep");
-        System.out.println(((JSONObject)threeHourData.get(threeHourIndex)).get(dataType));
+        return (String)((JSONObject)threeHourData.get(threeHourIndex)).get(dataType);
     }
 
     public void update(){
