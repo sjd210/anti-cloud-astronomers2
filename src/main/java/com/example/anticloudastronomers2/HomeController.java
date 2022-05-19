@@ -47,7 +47,7 @@ public class HomeController {
 
     @FXML
     private void btnDay1(ActionEvent event) throws IOException {
-        System.out.println("Day 1");
+        System.out.println("Day 1!");
         CurrentDay.setText("Day 1");
     }
 
