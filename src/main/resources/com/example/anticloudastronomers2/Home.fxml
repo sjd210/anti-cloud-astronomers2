@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.MainPaneController">
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +26,7 @@
          <content>
             <HBox prefHeight="110.0" prefWidth="597.0">
                <children>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Mon">
+                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" text="Mon">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -35,7 +35,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Tue">
+                  <Button fx:id="Day2Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay2" prefHeight="114.0" text="Tue">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -44,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Wed">
+                  <Button fx:id="Day3Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay3" prefHeight="114.0" text="Wed">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -53,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="399.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Thur">
+                  <Button fx:id="Day4Button" contentDisplay="TOP" layoutX="399.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay4" prefHeight="114.0" text="Thur">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -62,7 +62,25 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Fri">
+                  <Button fx:id="Day5Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay5" prefHeight="114.0" text="Fri">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/sun.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Day6Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay6" prefHeight="114.0" text="Sat">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/sun.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Day7Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay7" prefHeight="114.0" text="Sun">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -79,36 +97,41 @@
    <center>
       <ScrollPane prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
          <content>
-            <HBox minWidth="-Infinity">
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #7eb5c4;">
                      <children>
-                        <ImageView fitHeight="181.0" fitWidth="154.0" layoutX="91.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun_clouds.png" />
                            </image>
                         </ImageView>
                         <Text layoutX="46.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" />
-                        <Text layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
+                        <Text fx:id="Temperature" layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
                         <Text layoutX="200.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud Cover" />
-                        <Text layoutX="223.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" />
+                        <Text fx:id="CloudCover" layoutX="223.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" />
                         <Text layoutX="200.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moon Phase" />
                         <Text layoutX="62.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset" />
-                        <Text layoutX="65.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:36" />
-                        <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="217.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+                        <Text fx:id="Sunset" layoutX="65.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:36" />
+                        <ImageView fx:id="MoonPhase" fitHeight="37.0" fitWidth="37.0" layoutX="217.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/moon.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="103.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY">
+                        <Text fx:id="CurrentDay" layoutX="103.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" textAlignment="CENTER">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Text>
                         <Line endX="335.0" startX="335.0" startY="369.0" />
+                        <Text fx:id="DayRating" fill="#2b9900" layoutX="95.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
                      </children>
                   </Pane>
-                  <Pane prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #604a61;">
+                  <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #604a61;">
                      <children>
                         <ImageView fitHeight="78.0" fitWidth="27.0" layoutX="152.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
                            <image>

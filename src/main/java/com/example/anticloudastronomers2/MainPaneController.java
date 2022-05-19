@@ -58,4 +58,10 @@ public class MainPaneController implements Initializable {
         Pane view = FXMLLoader.load(getClass().getResource("Settings.fxml"));
         BorderPane.setCenter(view);
     }
+
+    @FXML
+    private void btnCalender(ActionEvent event) throws IOException {
+        AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
+        BorderPane.setCenter(view);
+    }
 }
