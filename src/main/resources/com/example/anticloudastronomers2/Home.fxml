@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.MainPaneController">
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -26,7 +26,7 @@
          <content>
             <HBox prefHeight="110.0" prefWidth="597.0">
                <children>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Mon">
+                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" text="Mon">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -35,7 +35,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Tue">
+                  <Button fx:id="Day2Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay2" prefHeight="114.0" text="Tue">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -44,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Wed">
+                  <Button fx:id="Day3Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay3" prefHeight="114.0" text="Wed">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -53,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="399.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Thur">
+                  <Button fx:id="Day4Button" contentDisplay="TOP" layoutX="399.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay4" prefHeight="114.0" text="Thur">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -62,7 +62,25 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="114.0" text="Fri">
+                  <Button fx:id="Day5Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay5" prefHeight="114.0" text="Fri">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/sun.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Day6Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay6" prefHeight="114.0" text="Sat">
+                     <graphic>
+                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/sun.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Day7Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay7" prefHeight="114.0" text="Sun">
                      <graphic>
                         <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>

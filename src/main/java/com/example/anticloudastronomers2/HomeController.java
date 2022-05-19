@@ -1,10 +1,98 @@
 package com.example.anticloudastronomers2;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 
 public class HomeController {
+
+    @FXML
+    private javafx.scene.layout.BorderPane BorderPane;
+
+    @FXML
+    private void btnHome(ActionEvent event) throws IOException {
+        System.out.println("Ping");
+        Pane view = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        BorderPane.setCenter(view);
+    }
+
+    @FXML
+    private void btnMap(ActionEvent event) throws IOException {
+        Pane view = FXMLLoader.load(getClass().getResource("Map.fxml"));
+        BorderPane.setCenter(null);
+        BorderPane.setCenter(view);
+    }
+
+    @FXML
+    private void btnSettings(ActionEvent event) throws IOException {
+        Pane view = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        BorderPane.setCenter(view);
+    }
+
+    @FXML
+    private void btnCalender(ActionEvent event) throws IOException {
+        AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
+        BorderPane.setCenter(view);
+    }
+
+    @FXML
+    private void btnDay1(ActionEvent event) throws IOException {
+        System.out.println("Day 1");
+    }
+
+    @FXML
+    private void btnDay2(ActionEvent event) throws IOException {
+        System.out.println("Day 2");
+    }
+
+    @FXML
+    private void btnDay3(ActionEvent event) throws IOException {
+        System.out.println("Day 3");
+    }
+
+    @FXML
+    private void btnDay4(ActionEvent event) throws IOException {
+        System.out.println("Day 4");
+    }
+
+    @FXML
+    private void btnDay5(ActionEvent event) throws IOException {
+        System.out.println("Day 5");
+    }
+
+    @FXML
+    private void btnDay6(ActionEvent event) throws IOException {
+        System.out.println("Day 6");
+    }
+
+    @FXML
+    private void btnDay7(ActionEvent event) throws IOException {
+        System.out.println("Day 7");
+    }
+
+    @FXML
+    private Button Day1Button;
+    @FXML
+    private Button Day2Button;
+    @FXML
+    private Button Day3Button;
+    @FXML
+    private Button Day4Button;
+    @FXML
+    private Button Day5Button;
+    @FXML
+    private Button Day6Button;
+    @FXML
+    private Button Day7Button;
+
     @FXML
     private Label Temperature;
     @FXML
