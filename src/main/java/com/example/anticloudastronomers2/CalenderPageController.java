@@ -20,7 +20,7 @@ public class CalenderPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Ping");
         for(int i = 0; i< 2; i++){
-            for(int j = 0; j < 3; j++){
+            for(int j = 0; j < 4; j++){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Calenderobj.fxml"));
                 CalenderObjController c = new CalenderObjController(LocalDateTime.now().plusDays(2*j+i));
                 loader.setController(c);
