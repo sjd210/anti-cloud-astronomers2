@@ -11,16 +11,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 
 public class HomeController {
 
     @FXML
     private javafx.scene.layout.BorderPane BorderPane;
-    @FXML
-    private Text CurrentDay;
 
     @FXML
     private void btnHome(ActionEvent event) throws IOException {
@@ -47,47 +43,61 @@ public class HomeController {
         AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
         BorderPane.setCenter(view);
     }
+    @FXML
+    private void ScrollRefresh(ActionEvent event) throws IOException {
+        if(System.currentTimeMillis() > currentTime + 60000){
+            refresh();
+        }
+
+    }
 
     @FXML
     private void btnDay1(ActionEvent event) throws IOException {
-        System.out.println("Day 1!");
+        //System.out.println("Day 1!");
         daysAhead = 0;
+        refresh();
     }
 
     @FXML
     private void btnDay2(ActionEvent event) throws IOException {
-        System.out.println("Day 2");
+        //System.out.println("Day 2");
         daysAhead = 1;
+        refresh();
     }
 
     @FXML
     private void btnDay3(ActionEvent event) throws IOException {
-        System.out.println("Day 3");
+        //System.out.println("Day 3");
         daysAhead = 2;
+        refresh();
     }
 
     @FXML
     private void btnDay4(ActionEvent event) throws IOException {
-        System.out.println("Day 4");
+        //System.out.println("Day 4");
         daysAhead = 3;
+        refresh();
     }
 
     @FXML
     private void btnDay5(ActionEvent event) throws IOException {
-        System.out.println("Day 5");
+        //System.out.println("Day 5");
         daysAhead = 4;
+        refresh();
     }
 
     @FXML
     private void btnDay6(ActionEvent event) throws IOException {
-        System.out.println("Day 6");
+        //System.out.println("Day 6");
         daysAhead = 5;
+        refresh();
     }
 
     @FXML
     private void btnDay7(ActionEvent event) throws IOException {
-        System.out.println("Day 7");
+        //System.out.println("Day 7");
         daysAhead = 6;
+        refresh();
     }
 
     @FXML
@@ -115,6 +125,10 @@ public class HomeController {
     private ImageView MoonPhase;
     @FXML
     private ImageView WeatherIcon;
+    @FXML
+    private Text CurrentDay;
+    @FXML
+    private Text DayRating;
 
     // daily sun / cloud / rain icons
     @FXML
@@ -202,16 +216,20 @@ public class HomeController {
     @FXML
     private Text Precipitation_2100;
 
-    private WeatherAPI Wapi = new WeatherAPI();
-    private AstroWeatherAPI Aapi = new AstroWeatherAPI();
-    int daysAhead = 0;
+
+    //these might not initialize
+    private final WeatherAPI Wapi = new WeatherAPI();
+    private final AstroWeatherAPI Aapi = new AstroWeatherAPI();
+    private final CloudCoverAPI Capi = new CloudCoverAPI();
+    private int daysAhead = 0;
+    private Long currentTime = 0L;
+
 
 
     private int find_hour_index(){ //finding the current 3-hour-index at the moment for the front page weather data
         Calendar now = Calendar.getInstance();
         int hour = now.get(Calendar.HOUR_OF_DAY);
-        int hour_index = Math.floorMod(hour,3);
-        return hour_index;
+        return Math.floorMod(hour,3);
     }
 
     private String find_day(){ //finding the current day of the week based off of the days ahead variable
@@ -230,6 +248,61 @@ public class HomeController {
 
     }
 
+    private String FindCloudCoverage(){
+        List<String> cloudMap = new ArrayList<>();
+        cloudMap.add("N/A"); //indexing starts at 1 not 0 for the api
+        cloudMap.add("0-6%");
+        cloudMap.add("6-19%");
+        cloudMap.add("19-31%");
+        cloudMap.add("31-44%");
+        cloudMap.add("44-56%");
+        cloudMap.add("56-69%");
+        cloudMap.add("69-81%");
+        cloudMap.add("81-94%");
+        cloudMap.add("94-100%");
+        int cloudval = Capi.get(daysAhead,"cloudcover");
+        return cloudMap.get(cloudval);
+    }
+
+    private String returnIconFromWeathertype(String weathertype){
+        Calendar now = Calendar.getInstance();
+        int hour = now.get(Calendar.HOUR_OF_DAY);
+        int sunset = Integer.parseInt(Aapi.get(0,"sunset").substring(0,2));
+        String s;
+        if(hour > sunset){
+            s = "moon.png";
+        }
+        else if(Objects.equals(weathertype, "sun")){
+            s = "sun.png";
+        }else if(Objects.equals(weathertype, "cloud")){
+            s = "cloud.png";
+        }else if(Objects.equals(weathertype, "sun with cloud")){
+            s = "sun_clouds.png";
+        }else if(Objects.equals(weathertype, "raining")){
+            s = "cloud_rain.png";
+        }else{
+            System.out.println("invalid weathertype parsed to returnIconFromWeathertype function");
+            return null;
+        }
+        return ("@../icons/" + s);
+    }
+
+    private String returnIconFromMoonphase(String phase){
+        String s;
+        if(Objects.equals(phase, "new")){
+            s = "new_moon.png";
+        }else if (Objects.equals(phase, "crescent")){
+            s = "crescent_moon.png";
+        }else if (Objects.equals(phase, "half")){
+            s = "half_moon.png";
+        }else if (Objects.equals(phase, "gibbous")){
+            s = "gibbous_moon.png";
+        }else{
+            s = "full_moon.png";
+        }
+        return ("@../icons/" + s);
+    }
+
     private void updateTemperature(int CurrentHourIndex){
         Temperature.setText(Wapi.get(daysAhead,CurrentHourIndex,"T"));
     }
@@ -243,12 +316,20 @@ public class HomeController {
         WeatherIcon.setImage(image);
     }
 
-    private void updateCloudCoverage(int CurrentHourIndex){
-
+    private void updateCloudCoverage(){
+        CloudCover.setText(FindCloudCoverage());
     }
 
     private void updateDay(){
         CurrentDay.setText(find_day());
+    }
+
+    private void updateDayRating(){
+        if(Capi.get(daysAhead,"cloudcover") > 4){
+            DayRating.setText("BAD day to stargaze");
+        }else{
+            DayRating.setText("GOOD day to stargaze");
+        }
     }
 
     private void updateMoonPhase(){
@@ -261,7 +342,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,0, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_0000.setImage(image);
-        //cloudcover
+        CloudCoverage_0000.setText(FindCloudCoverage());
         temperature_0000.setText(Wapi.get(daysAhead,0,"T"));
         Precipitation_0000.setText(Wapi.get(daysAhead,0,"Pp"));
     }
@@ -270,7 +351,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,1, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_0300.setImage(image);
-        //cloudcover
+        CloudCoverage_0300.setText(FindCloudCoverage());
         temperature_0300.setText(Wapi.get(daysAhead,1,"T"));
         Precipitation_0300.setText(Wapi.get(daysAhead,1,"Pp"));
     }
@@ -279,7 +360,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,2, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_0600.setImage(image);
-        //cloudcover
+        CloudCoverage_0600.setText(FindCloudCoverage());
         temperature_0600.setText(Wapi.get(daysAhead,2,"T"));
         Precipitation_0600.setText(Wapi.get(daysAhead,2,"Pp"));
     }
@@ -288,7 +369,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,3, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_0900.setImage(image);
-        //cloudcover
+        CloudCoverage_0900.setText(FindCloudCoverage());
         temperature_0900.setText(Wapi.get(daysAhead,3,"T"));
         Precipitation_0900.setText(Wapi.get(daysAhead,3,"Pp"));
     }
@@ -297,7 +378,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,4, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_1200.setImage(image);
-        //cloudcover
+        CloudCoverage_1200.setText(FindCloudCoverage());
         temperature_1200.setText(Wapi.get(daysAhead,4,"T"));
         Precipitation_1200.setText(Wapi.get(daysAhead,4,"Pp"));
     }
@@ -306,7 +387,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,5, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_1500.setImage(image);
-        //cloudcover
+        CloudCoverage_1500.setText(FindCloudCoverage());
         temperature_1500.setText(Wapi.get(daysAhead,5,"T"));
         Precipitation_1500.setText(Wapi.get(daysAhead,5,"Pp"));
     }
@@ -315,7 +396,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,6, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_1800.setImage(image);
-        //cloudcover
+        CloudCoverage_1800.setText(FindCloudCoverage());
         temperature_1800.setText(Wapi.get(daysAhead,6,"T"));
         Precipitation_1800.setText(Wapi.get(daysAhead,6,"Pp"));
     }
@@ -324,7 +405,7 @@ public class HomeController {
         String weathertype = Wapi.get(daysAhead,7, "W");
         Image image = new Image(returnIconFromWeathertype(weathertype));
         sunIcon_2100.setImage(image);
-        //cloudcover
+        CloudCoverage_2100.setText(FindCloudCoverage());
         temperature_2100.setText(Wapi.get(daysAhead,7,"T"));
         Precipitation_2100.setText(Wapi.get(daysAhead,7,"Pp"));
     }
@@ -353,48 +434,16 @@ public class HomeController {
         WeatherIcon7.setImage(image7);
     }
 
-    private String returnIconFromWeathertype(String weathertype){
-        Calendar now = Calendar.getInstance();
-        int hour = now.get(Calendar.HOUR_OF_DAY);
-        int sunset = Integer.parseInt(Aapi.get(0,"sunset").substring(0,2));
-        if(hour > sunset){
-            return "moon.png";
-        }
-        else if(weathertype == "sun"){
-             return "sun.png";
-        }else if(weathertype == "cloud"){
-            return "cloud.png";
-        }else if(weathertype == "sun with cloud"){
-            return "sun_clouds.png";
-        }else if(weathertype == "raining"){
-            return "cloud_rain.png";
-        }else{
-            System.out.println("invalid weathertype parsed to returnIconFromWeathertype function");
-            return null;
-        }
-    }
-    
-    private String returnIconFromMoonphase(String phase){
-        if(phase == "new"){
-            return "new_moon.png";
-        }else if (phase == "crescent"){
-            return "crescent_moon.png";
-        }else if (phase == "half"){
-            return "half_moon.png";
-        }else if (phase == "gibbous"){
-            return "gibbous_moon.png";
-        }else{
-            return "full_moon.png";
-        }
-    }
 
 
     private void refresh(){
         Wapi.update();
         Aapi.update();
+        Capi.update();
         int currentHourIndex = find_hour_index();
+        currentTime = System.currentTimeMillis();
 
-        update_0000();
+        update_0000(); //hourly cloud coverages are daily due to how the api works.
         update_0300();
         update_0600();
         update_0900();
@@ -405,9 +454,10 @@ public class HomeController {
 
         updateBarWeatherIcons();
         updateDay();
+        updateDayRating();
         updateSunset();
-        //updateCloudCoverage(currentHourIndex);
-        //updateMoonPhase();
+        updateCloudCoverage();
+        updateMoonPhase();
         updateTemperature(currentHourIndex);
         updateWeatherIcon(currentHourIndex);
     }
