@@ -11,16 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
-   <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="Home" mnemonicParsing="false" onAction="#btnHome" prefHeight="121.0" prefWidth="180.0" text="Button" />
-            <Button fx:id="Map" mnemonicParsing="false" onAction="#btnMap" prefHeight="118.0" prefWidth="194.0" text="Button" />
-            <Button fx:id="Settings" mnemonicParsing="false" onAction="#btnSettings" prefHeight="113.0" prefWidth="194.0" text="Button" />
-         </children>
-      </HBox>
-   </top>
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
    <bottom>
       <ScrollPane prefHeight="130.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <content>
