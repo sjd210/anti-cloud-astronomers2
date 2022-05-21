@@ -8,21 +8,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="170.0" prefWidth="120.0" style="-fx-background-color: #7eb5c4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1.7976931348623157E308" style="-fx-background-color: #7eb5c4;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox prefHeight="170.0" prefWidth="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="DayLabel" prefHeight="23.0" prefWidth="60" />
             <ImageView fx:id="MoonPhase" fitHeight="68.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
-            <GridPane prefHeight="97.0" prefWidth="120.0">
+            <GridPane fx:id="Grid" maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="100.0" prefWidth="120.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="34.60001220703125" minHeight="10.0" prefHeight="21.00000419616699" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="46.599995803833" minHeight="10.0" prefHeight="34.40001220703126" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="28.79998779296875" minHeight="0.0" prefHeight="28.79998779296875" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
          </children>

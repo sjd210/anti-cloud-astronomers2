@@ -21,8 +21,8 @@ public class CalenderPageController implements Initializable {
         System.out.println("Ping");
         AstroWeatherAPI weather = new AstroWeatherAPI();
         weather.update();
-        for(int i = 0; i< 2; i++){
-            for(int j = 0; j < 50; j++){
+        for(int i = 0; i< 3; i++){
+            for(int j = 0; j < 13; j++){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Calenderobj.fxml"));
                 CalenderObjController c = new CalenderObjController(LocalDateTime.now().plusDays(2*j+i), weather);
                 loader.setController(c);

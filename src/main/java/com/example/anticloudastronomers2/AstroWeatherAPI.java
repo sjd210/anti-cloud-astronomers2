@@ -18,7 +18,7 @@ public class AstroWeatherAPI {
     static private String BASE_URL = "https://api.weatherapi.com/v1/astronomy.json?";
     static private String CAMBRIDGE = "q=52.1951,0.1313";
     static private String KEY = "key=40631e1acccb42ac83a144050221805&";
-    static private int FORECASTDAYS = 8;
+    static private int FORECASTDAYS = 40;
 
     private ArrayList<JSONObject> jsonArray;
 
