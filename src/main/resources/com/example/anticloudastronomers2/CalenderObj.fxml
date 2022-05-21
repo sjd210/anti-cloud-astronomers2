@@ -13,7 +13,7 @@
       <VBox prefHeight="170.0" prefWidth="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="DayLabel" prefHeight="23.0" prefWidth="60" />
-            <ImageView fitHeight="68.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="MoonPhase" fitHeight="68.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
             <GridPane prefHeight="97.0" prefWidth="120.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
