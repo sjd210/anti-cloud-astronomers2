@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="335.0" style="-fx-background-color: #f0e8d3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.SettingsController">
    <children>
-      <Label layoutX="220.0" layoutY="167.0" text="Settings">
+      <Text layoutX="123.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings">
          <font>
-            <Font size="45.0" />
-         </font>
-      </Label>
+            <Font size="24.0" />
+         </font></Text>
+      <ChoiceBox fx:id="TemperatureChoice" layoutX="153.0" layoutY="155.0" prefWidth="150.0" />
+      <Text layoutX="45.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature units:" />
+      <Text layoutX="45.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A weather app by the Anti-Cloud Astronomers" />
+      <TextFlow layoutX="67.0" layoutY="554.0" prefHeight="32.0" prefWidth="200.0" />
+      <Text layoutX="72.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sol Dubock, Leo Ellis, Greg Frazer, Jonathan Haley, and Anmol Gupta" wrappingWidth="188.776123046875" />
    </children>
 </AnchorPane>

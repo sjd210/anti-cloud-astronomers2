@@ -11,16 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
-   <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="Home" mnemonicParsing="false" onAction="#btnHome" prefHeight="121.0" prefWidth="180.0" text="Button" />
-            <Button fx:id="Map" mnemonicParsing="false" onAction="#btnMap" prefHeight="118.0" prefWidth="194.0" text="Button" />
-            <Button fx:id="Settings" mnemonicParsing="false" onAction="#btnSettings" prefHeight="113.0" prefWidth="194.0" text="Button" />
-         </children>
-      </HBox>
-   </top>
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.anticloudastronomers2.HomeController">
    <bottom>
       <ScrollPane prefHeight="130.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <content>
@@ -28,7 +19,7 @@
                <children>
                   <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" text="Mon">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon1" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -37,7 +28,7 @@
                   </Button>
                   <Button fx:id="Day2Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay2" prefHeight="114.0" text="Tue">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon2" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -46,7 +37,7 @@
                   </Button>
                   <Button fx:id="Day3Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay3" prefHeight="114.0" text="Wed">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon3" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -55,7 +46,7 @@
                   </Button>
                   <Button fx:id="Day4Button" contentDisplay="TOP" layoutX="399.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay4" prefHeight="114.0" text="Thur">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon4" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -64,7 +55,7 @@
                   </Button>
                   <Button fx:id="Day5Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay5" prefHeight="114.0" text="Fri">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon5" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -73,7 +64,7 @@
                   </Button>
                   <Button fx:id="Day6Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay6" prefHeight="114.0" text="Sat">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon6" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -82,7 +73,7 @@
                   </Button>
                   <Button fx:id="Day7Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay7" prefHeight="114.0" text="Sun">
                      <graphic>
-                        <ImageView fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon7" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun.png" />
                            </image>
@@ -94,14 +85,14 @@
          </content>
       </ScrollPane>
    </bottom>
-   <center>
-      <ScrollPane prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
+   <left>
+      <ScrollPane hvalue="1.0" onDragExited="#ScrollRefresh" prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
          <content>
             <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
                   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #7eb5c4;">
                      <children>
-                        <ImageView fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="WeatherIcon" fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/sun_clouds.png" />
                            </image>
@@ -152,13 +143,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_0000" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_0000" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_0000" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -169,7 +160,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_0000" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
@@ -179,13 +170,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_0300" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_0300" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_0300" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -196,7 +187,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_0300" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8d8d;">
@@ -206,13 +197,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_0600" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_0600" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_0600" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -223,7 +214,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_0600" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
@@ -233,13 +224,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_0900" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_0900" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_0900" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -250,7 +241,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_0900" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
@@ -260,13 +251,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_1200" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_1200" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_1200" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -277,7 +268,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_1200" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
@@ -287,13 +278,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_1500" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_1500" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_1500" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -304,7 +295,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_1500" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
@@ -314,13 +305,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_1800" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_1800" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_1800" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -331,7 +322,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_1800" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
@@ -341,13 +332,13 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
-                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                              <Text fx:id="temperature_2100" layoutX="38.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10°C" />
+                              <ImageView fx:id="sunIcon_2100" fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/sun_clouds.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
+                              <Text fx:id="CloudCoverage_2100" layoutX="38.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18%" wrappingWidth="25.0" />
                               <ImageView fitHeight="57.0" fitWidth="58.0" layoutX="21.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../icons/cloud.png" />
@@ -358,7 +349,7 @@
                                     <Image url="@../icons/cloud_rain.jpg" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
+                              <Text fx:id="Precipitation_2100" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
                      </children>
@@ -367,5 +358,5 @@
             </HBox>
          </content>
       </ScrollPane>
-   </center>
+   </left>
 </BorderPane>

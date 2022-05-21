@@ -30,26 +30,26 @@ public class MainPaneController implements Initializable {
     private Button Settings;
 
     @FXML
-    public void initialize(URL url, ResourceBundle rb){
-
+    public void initialize(URL url, ResourceBundle rb) {
+        Pane view = null;
+        try {
+            view = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BorderPane.setCenter(view);
     }
 
     @FXML
     private void btnHome(ActionEvent event) throws IOException {
         System.out.println("Ping");
-    //   Stage stage = new Stage();
         Pane view = FXMLLoader.load(getClass().getResource("Home.fxml"));
-     //   Scene scene = new Scene(view, 355, 600);
-     //   stage.setTitle("Hello there test commit!");
-     //   stage.setScene(scene);
-      //  stage.show();
         BorderPane.setCenter(view);
     }
 
     @FXML
     private void btnMap(ActionEvent event) throws IOException {
         Pane view = FXMLLoader.load(getClass().getResource("Map.fxml"));
-        BorderPane.setCenter(null);
         BorderPane.setCenter(view);
     }
 
@@ -60,7 +60,7 @@ public class MainPaneController implements Initializable {
     }
 
     @FXML
-    private void btnCalender(ActionEvent event) throws IOException {
+    private void btnCalendar(ActionEvent event) throws IOException {
         AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
         BorderPane.setCenter(view);
     }
