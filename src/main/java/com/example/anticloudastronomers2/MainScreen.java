@@ -34,6 +34,17 @@ public class MainScreen extends Application {
 
         AstroWeatherAPI aw = new AstroWeatherAPI();
         aw.update();
-        aw.get(3,"moonrise");
+        System.out.println(aw.get(0,"moonrise"));
+        System.out.println(aw.get(1,"moonrise"));
+        System.out.println(aw.get(2,"moonrise"));
+        System.out.println(aw.get(3,"moonrise"));
+        System.out.println(aw.get(4,"moonrise"));
+
+        System.out.println(aw.get(0,"moon_phase"));
+        System.out.println(aw.get(1,"moon_phase"));
+        System.out.println(aw.get(2,"moon_phase"));
+        System.out.println(aw.get(3,"moon_phase"));
+        System.out.println(aw.get(4,"moon_phase"));
+        System.out.println(aw.get(5,"moon_phase"));
     }
 }

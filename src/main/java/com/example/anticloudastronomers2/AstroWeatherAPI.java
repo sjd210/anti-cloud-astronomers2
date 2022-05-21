@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.channels.NotYetConnectedException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AstroWeatherAPI {
@@ -44,8 +45,11 @@ public class AstroWeatherAPI {
     }
 
     public void update(){
+        LocalDate dateTime = LocalDate.now(); // Create a date object
         for (int i = 0; i < FORECASTDAYS; i++) {
-            String url_string = BASE_URL + KEY + CAMBRIDGE;
+            LocalDate dateTimeLoop = dateTime.plusDays(i);
+            String dt = "&dt=" + dateTimeLoop.toString();
+            String url_string = BASE_URL + KEY + CAMBRIDGE + dt;
             URL url;
             HttpURLConnection con;
             JSONObject jsonObject_new;
