@@ -23,14 +23,24 @@ public class MainScreen extends Application {
     }
 
     public static void main(String[] args) {
+
+        WeatherAPI2 w2 = new WeatherAPI2();
+        w2.update();
+        System.out.println(w2.get(1,4,"temp_c"));
+        System.out.println(w2.get(2,4,"temp_c"));
+        System.out.println(w2.get(3,4,"temp_c"));
+        System.out.println(w2.get(7,4,"temp_c"));
+        System.out.println(w2.get(7,5,"temp_c"));
+        System.out.println(w2.get(7,22,"temp_c"));
+        System.out.println(w2.get(7,23,"temp_c"));
+
         CloudCoverAPI c = new CloudCoverAPI();
         c.update();
-        System.out.println(c.get(2,"cloudcover"));
+        System.out.println(c.get(6,"cloudcover"));
 
         WeatherAPI w = new WeatherAPI();
         w.update();
-        w.get(0,0,"T");
-       // launch();
+        System.out.println(w.get(4,0,"T"));
 
         AstroWeatherAPI aw = new AstroWeatherAPI();
         aw.update();
@@ -46,5 +56,6 @@ public class MainScreen extends Application {
         System.out.println(aw.get(3,"moon_phase"));
         System.out.println(aw.get(4,"moon_phase"));
         System.out.println(aw.get(5,"moon_phase"));
+        System.out.println(aw.get(6,"moon_phase"));
     }
 }
