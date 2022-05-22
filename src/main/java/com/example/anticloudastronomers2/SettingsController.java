@@ -36,6 +36,5 @@ public class SettingsController implements Initializable {
         List<String> list = new ArrayList<String>(List.of("Celsius", "Fahrenheit"));
         TemperatureChoice.setItems(FXCollections.observableList(list));
         TemperatureChoice.setValue(SettingsStore.temperatureType);
-        System.out.println("Settings ping");
     }
 }

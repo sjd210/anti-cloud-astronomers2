@@ -3,6 +3,7 @@ package com.example.anticloudastronomers2;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -18,11 +19,12 @@ public class CalenderPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Ping");
-        for(int i = 0; i< 2; i++){
-            for(int j = 0; j < 3; j++){
+        AstroWeatherAPI weather = new AstroWeatherAPI();
+        weather.update();
+        for(int i = 0; i< 3; i++){
+            for(int j = 0; j < 13; j++){
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Calenderobj.fxml"));
-                CalenderObjController c = new CalenderObjController(LocalDateTime.now().plusDays(2*j+i));
+                CalenderObjController c = new CalenderObjController(LocalDateTime.now().plusDays(2*j+i), weather);
                 loader.setController(c);
                 try {
                     Grid.add(loader.load(), i, j);
@@ -31,6 +33,5 @@ public class CalenderPageController implements Initializable {
                 }
             }
         }
-
     }
 }
