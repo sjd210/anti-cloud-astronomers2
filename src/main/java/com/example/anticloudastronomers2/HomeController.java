@@ -25,30 +25,6 @@ public class HomeController implements Initializable {
     private javafx.scene.layout.BorderPane BorderPane;
 
     @FXML
-    private void btnHome(ActionEvent event) throws IOException {
-        Pane view = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        BorderPane.setCenter(view);
-    }
-
-    @FXML
-    private void btnMap(ActionEvent event) throws IOException {
-        Pane view = FXMLLoader.load(getClass().getResource("Map.fxml"));
-        BorderPane.setCenter(null);
-        BorderPane.setCenter(view);
-    }
-
-    @FXML
-    private void btnSettings(ActionEvent event) throws IOException {
-        Pane view = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        BorderPane.setCenter(view);
-    }
-
-    @FXML
-    private void btnCalender(ActionEvent event) throws IOException {
-        AnchorPane view = FXMLLoader.load(getClass().getResource("CalenderPage.fxml"));
-        BorderPane.setCenter(view);
-    }
-    @FXML
     private void ScrollRefresh(ActionEvent event) throws IOException { //never runs, not sure how to make scrolling a scroll pane do an action.
         //System.out.println(currentTime);
         if(System.currentTimeMillis() > currentTime + 60000){
@@ -59,52 +35,55 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay1(ActionEvent event) throws IOException {
-        //System.out.println("Day 1!");
         daysAhead = 0;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay2(ActionEvent event) throws IOException {
-        //System.out.println("Day 2");
         daysAhead = 1;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay3(ActionEvent event) throws IOException {
-        //System.out.println("Day 3");
         daysAhead = 2;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay4(ActionEvent event) throws IOException {
-        //System.out.println("Day 4");
         daysAhead = 3;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay5(ActionEvent event) throws IOException {
-        //System.out.println("Day 5");
         daysAhead = 4;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay6(ActionEvent event) throws IOException {
-        //System.out.println("Day 6");
         daysAhead = 5;
+        MainScroll.setHvalue(0);
         refresh();
     }
 
     @FXML
     private void btnDay7(ActionEvent event) throws IOException {
-        //System.out.println("Day 7");
         daysAhead = 6;
+        MainScroll.setHvalue(0);
         refresh();
     }
+
+    @FXML
+    private ScrollPane MainScroll;
 
     @FXML
     private Button Day1Button;

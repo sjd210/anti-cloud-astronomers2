@@ -86,11 +86,11 @@
       </ScrollPane>
    </bottom>
    <left>
-      <ScrollPane onDragExited="#ScrollRefresh" onMouseDragExited="#ScrollRefresh" onMouseDragReleased="#ScrollRefresh" onScroll="#ScrollRefresh" prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
+      <ScrollPane fx:id="MainScroll" pannable="true" prefHeight="370.0" prefWidth="710.0" BorderPane.alignment="CENTER">
          <content>
             <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #7eb5c4;">
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #2a2e5e;">
                      <children>
                         <ImageView fx:id="WeatherIcon" fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -98,42 +98,30 @@
                            </image>
                         </ImageView>
                         <Text layoutX="46.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature" />
-                        <Text fx:id="Temperature" layoutX="64.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
+                        <Text fx:id="Temperature" layoutX="67.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15°C" />
                         <Text layoutX="200.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cloud Cover" />
                         <Text fx:id="CloudCover" layoutX="223.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50%" />
-                        <Text layoutX="200.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moon Phase" />
+                        <Text layoutX="207.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moon Phase" />
                         <Text layoutX="62.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset" />
-                        <Text fx:id="Sunset" layoutX="65.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20:36" />
-                        <ImageView fx:id="MoonPhase" fitHeight="37.0" fitWidth="37.0" layoutX="217.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+                        <Text fx:id="Sunset" layoutX="58.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8:46 PM" />
+                        <ImageView fx:id="MoonPhase" fitHeight="37.0" fitWidth="37.0" layoutX="222.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icons/moon.png" />
                            </image>
                         </ImageView>
-                        <Text fx:id="CurrentDay" layoutX="103.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" textAlignment="CENTER">
+                        <Text fx:id="CurrentDay" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONDAY" x="103.0">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Text>
                         <Line endX="335.0" startX="335.0" startY="369.0" />
-                        <Text fx:id="DayRating" fill="#2b9900" layoutX="95.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze">
+                        <Text fx:id="DayRating" fill="#3f8a28" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze" x="95.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
                      </children>
                   </Pane>
-                  <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #604a61;">
-                     <children>
-                        <ImageView fitHeight="78.0" fitWidth="27.0" layoutX="152.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/sun_clouds.png" />
-                           </image>
-                        </ImageView>
-                        <Text layoutX="88.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ANY EXTRA DATA OVERVIEW" />
-                        <Text layoutX="32.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(LEAVING THIS BLANK UNTIL WE FIGURE OUT API)" />
-                     </children>
-                  </Pane>
-                  <Line endX="341.0" startX="341.0" startY="369.0" />
                   <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0">
                      <children>
                         <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #696969;">
@@ -271,7 +259,7 @@
                               <Text fx:id="Precipitation_1200" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8d8d;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16:00">
                                  <font>
@@ -325,7 +313,7 @@
                               <Text fx:id="Precipitation_1800" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #696969;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22:00">
                                  <font>

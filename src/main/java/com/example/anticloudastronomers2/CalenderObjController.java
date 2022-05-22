@@ -2,7 +2,9 @@ package com.example.anticloudastronomers2;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -31,6 +33,19 @@ public class CalenderObjController implements Initializable {
     @FXML
     private GridPane Grid;
 
+    @FXML
+    private ImageView Planet1;
+    @FXML
+    private ImageView Planet2;
+    @FXML
+    private ImageView Planet3;
+    @FXML
+    private ImageView Planet4;
+    @FXML
+    private ImageView Planet5;
+    @FXML
+    private ImageView Planet6;
+
     private LocalDateTime myDate;
     private AstroWeatherAPI myWeather;
     private Map<String, String> moonPhases = new HashMap<>() {{
@@ -38,7 +53,7 @@ public class CalenderObjController implements Initializable {
         put("Waxing Gibbous", "WaxingGibbous.png");put("Full Moon", "FullMoon.png");put("Waning Gibbous", "WaningGibbous.png");
         put("Third Quarter", "LastQuater.png");put("Waning Crescent", "WaningCrescent.png");
     }};
-    private String[] planets = new String[]{"Mercury.png","Venus.png","Mars.png","Saturn.png","Jupiter.png"};
+    private String[] planets = new String[]{"Mercury.png","Venus.png","Mars.png","Jupiter.png","Saturn.png", "Uranus.png"};
 
 
 
@@ -60,21 +75,22 @@ public class CalenderObjController implements Initializable {
         MoonPhase.setImage(image);
         Random rd = new Random();
         int location = 0;
-        for(int i = 0; i <5; i++){
+        Image[] images = new Image[6];
+        for(int i = 0; i <6; i++){
             if(rd.nextBoolean()){
                 try {
-                    image = new Image(new FileInputStream("src/main/resources/com/example/Planet/"+planets[i]));
+                    images[i] = new Image(new FileInputStream("src/main/resources/com/example/Planet/"+planets[i]));
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-                ImageView planet = new ImageView();
-                planet.setFitHeight(40);
-                planet.setFitWidth(40);
-                planet.setImage(image);
-                Grid.add(planet, location%2,(int)location/2);
                 location++;
             }
         }
-
+        Planet1.setImage(images[0]);
+        Planet2.setImage(images[1]);
+        Planet3.setImage(images[2]);
+        Planet4.setImage(images[3]);
+        Planet5.setImage(images[4]);
+        Planet6.setImage(images[5]);
     }
 }
