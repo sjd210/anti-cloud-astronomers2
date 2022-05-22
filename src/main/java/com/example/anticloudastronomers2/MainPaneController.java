@@ -42,7 +42,6 @@ public class MainPaneController implements Initializable {
 
     @FXML
     private void btnHome(ActionEvent event) throws IOException {
-        System.out.println("Ping");
         Pane view = FXMLLoader.load(getClass().getResource("Home.fxml"));
         BorderPane.setCenter(view);
     }

@@ -6,15 +6,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.util.Date;
 
-public class HelloApplication extends Application {
+public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("MainPane.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("MainPane.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 335, 600);
-        stage.setTitle("Very good weather app");
+        stage.setTitle("Anti-Cloud Astronomy");
         stage.setScene(scene);
         stage.show();
 

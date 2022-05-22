@@ -80,6 +80,21 @@ public class WeatherAPI2 {
         return s;
     }
 
+    public String getWeathertype(int daysAhead, int hour){
+        if (jsonArray == null){
+            System.out.printf("Have not yet connected to the API");
+            throw new NotYetConnectedException();
+        }
+
+        /*
+                takes daysahead and hour and returns the weather icon code */
+
+        JSONObject s = (JSONObject) jsonArray.get(daysAhead).getJSONObject(hour).get("condition");
+        String temp = s.getString("icon");
+        String icon = temp.substring(temp.length() - 7);
+        return icon;
+    }
+
     public void update(){
         LocalDate dateTime = LocalDate.now(); // Create a date object
         for (int i = 0; i < FORECASTDAYS; i++) {

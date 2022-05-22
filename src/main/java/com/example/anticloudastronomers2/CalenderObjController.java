@@ -33,7 +33,7 @@ public class CalenderObjController implements Initializable {
 
     private LocalDateTime myDate;
     private AstroWeatherAPI myWeather;
-    private Map<String, String> moonPhases = new HashMap<String, String>() {{
+    private Map<String, String> moonPhases = new HashMap<>() {{
         put("New Moon", "NewMoon.png");put("Waxing Crescent", "WaxingCrescent.png");put("First Quarter", "FirstQuater.png");
         put("Waxing Gibbous", "WaxingGibbous.png");put("Full Moon", "FullMoon.png");put("Waning Gibbous", "WaningGibbous.png");
         put("Third Quarter", "LastQuater.png");put("Waning Crescent", "WaningCrescent.png");
@@ -51,7 +51,6 @@ public class CalenderObjController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DayLabel.setText(myDate.getMonth()+" "+myDate.getDayOfMonth());
         String w = myWeather.get((int) ChronoUnit.DAYS.between(LocalDate.now(), myDate.toLocalDate()),"moon_phase");
-        System.out.println(w);
         Image image = null;
         try {
             image = new Image(new FileInputStream("src/main/resources/com/example/MoonPhases/"+moonPhases.get(w)));

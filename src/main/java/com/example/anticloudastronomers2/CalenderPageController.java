@@ -18,7 +18,6 @@ public class CalenderPageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Ping");
         AstroWeatherAPI weather = new AstroWeatherAPI();
         weather.update();
         for(int i = 0; i< 3; i++){
