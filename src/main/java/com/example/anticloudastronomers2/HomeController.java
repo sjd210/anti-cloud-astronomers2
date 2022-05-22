@@ -37,49 +37,49 @@ public class HomeController implements Initializable {
     private void btnDay1(ActionEvent event) throws IOException {
         daysAhead = 0;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay2(ActionEvent event) throws IOException {
         daysAhead = 1;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay3(ActionEvent event) throws IOException {
         daysAhead = 2;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay4(ActionEvent event) throws IOException {
         daysAhead = 3;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay5(ActionEvent event) throws IOException {
         daysAhead = 4;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay6(ActionEvent event) throws IOException {
         daysAhead = 5;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
     private void btnDay7(ActionEvent event) throws IOException {
         daysAhead = 6;
         MainScroll.setHvalue(0);
-        refresh();
+        softRefresh();
     }
 
     @FXML
@@ -450,6 +450,30 @@ public class HomeController implements Initializable {
         Wapi.update();
         Aapi.update();
         Capi.update();
+        int currentHourIndex = find_hour_index();
+        currentTime = System.currentTimeMillis();
+
+        update_0000(); //hourly cloud coverages are daily due to how the api works.
+        update_0300();
+        update_0600();
+        update_0900();
+        update_1200();
+        update_1500();
+        update_1800();
+        update_2100();
+
+        updateBarDayLabels();
+        updateBarWeatherIcons();
+        updateDay();
+        updateDayRating();
+        updateSunset();
+        updateCloudCoverage(currentHourIndex);
+        updateMoonPhase();
+        updateTemperature(currentHourIndex);
+        updateWeatherIcon(currentHourIndex);
+    }
+
+    private void softRefresh() throws FileNotFoundException {
         int currentHourIndex = find_hour_index();
         currentTime = System.currentTimeMillis();
 
