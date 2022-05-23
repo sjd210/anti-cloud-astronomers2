@@ -230,7 +230,7 @@ public class HomeController implements Initializable {
         dayArray.add("FRIDAY");
         dayArray.add("SATURDAY");
         day += daysAhead;
-        return dayArray.get(day - 1);
+        return dayArray.get((day - 1) % 7);
 
     }
 
