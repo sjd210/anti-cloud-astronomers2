@@ -1,5 +1,6 @@
 package com.example.anticloudastronomers2;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,9 +9,11 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -46,6 +49,9 @@ public class CalenderObjController implements Initializable {
     @FXML
     private ImageView Planet6;
 
+    @FXML
+    private Text PlanetText;
+
     private LocalDateTime myDate;
     private AstroWeatherAPI myWeather;
     private Map<String, String> moonPhases = new HashMap<>() {{
@@ -55,7 +61,7 @@ public class CalenderObjController implements Initializable {
     }};
     private String[] planets = new String[]{"Mercury.png","Venus.png","Mars.png","Jupiter.png","Saturn.png", "Uranus.png"};
 
-
+    private boolean[] planet;
 
     public CalenderObjController(LocalDateTime d, AstroWeatherAPI w){
         myDate = d;
@@ -76,10 +82,12 @@ public class CalenderObjController implements Initializable {
         Random rd = new Random();
         int location = 0;
         Image[] images = new Image[6];
+        planet = new boolean[6];
         for(int i = 0; i <6; i++){
             if(rd.nextBoolean()){
                 try {
                     images[i] = new Image(new FileInputStream("src/main/resources/com/example/Planet/"+planets[i]));
+                    planet[i] = true;
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -92,5 +100,48 @@ public class CalenderObjController implements Initializable {
         Planet4.setImage(images[3]);
         Planet5.setImage(images[4]);
         Planet6.setImage(images[5]);
+    }
+
+    @FXML
+    private void EnterMercury() throws IOException {
+        if (planet[0]) {
+            PlanetText.setText("Mercury");
+        }
+
+    }
+
+    @FXML
+    private void EnterVenus() throws IOException {
+        if (planet[1]) {
+            PlanetText.setText("Venus");
+        }
+    }
+
+    @FXML
+    private void EnterMars() throws IOException {
+        if (planet[2]) {
+            PlanetText.setText("Mars");
+        }
+    }
+
+    @FXML
+    private void EnterJupiter() throws IOException {
+        if (planet[3]) {
+            PlanetText.setText("Jupiter");
+        }
+    }
+
+    @FXML
+    private void EnterSaturn() throws IOException {
+        if (planet[4]) {
+            PlanetText.setText("Saturn");
+        }
+    }
+
+    @FXML
+    private void EnterUranus() throws IOException {
+        if (planet[5]) {
+            PlanetText.setText("Uranus");
+        }
     }
 }
