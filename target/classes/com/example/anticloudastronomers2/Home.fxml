@@ -17,7 +17,7 @@
          <content>
             <HBox prefHeight="110.0" prefWidth="597.0">
                <children>
-                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" style="-fx-background-color: #7a7a7a;" text="Mon">
+                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" style="-fx-background-color: #7a7aFF;" text="Mon">
                      <graphic>
                         <ImageView fx:id="WeatherIcon1" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -71,7 +71,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="Day7Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay7" prefHeight="114.0" text="Sun">
+                  <Button fx:id="Day7Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay7" prefHeight="114.0" style="-fx-background-color: #7a7aFF;" text="Sun">
                      <graphic>
                         <ImageView fx:id="WeatherIcon7" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -90,7 +90,7 @@
          <content>
             <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #345c7d;">
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #6969F9;">
                      <children>
                         <ImageView fx:id="WeatherIcon" fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,7 +124,7 @@
                   </Pane>
                   <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0">
                      <children>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #696969;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #6969F9;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="01:00">
                                  <font>
@@ -151,7 +151,7 @@
                               <Text fx:id="Precipitation_0000" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8080F0;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="04:00">
                                  <font>
@@ -178,7 +178,7 @@
                               <Text fx:id="Precipitation_0300" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8d8d;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8dFd;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="07:00">
                                  <font>
@@ -205,7 +205,7 @@
                               <Text fx:id="Precipitation_0600" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9fFf;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10:00">
                                  <font>
@@ -232,7 +232,7 @@
                               <Text fx:id="Precipitation_0900" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9f9f;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #9f9fFf;">
                            <children>
                               <Text layoutX="34.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="13:00">
                                  <font>
@@ -259,7 +259,7 @@
                               <Text fx:id="Precipitation_1200" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8d8d;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8f8dFd;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16:00">
                                  <font>
@@ -286,7 +286,7 @@
                               <Text fx:id="Precipitation_1500" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #808080;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #8080F0;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:00">
                                  <font>
@@ -313,7 +313,7 @@
                               <Text fx:id="Precipitation_1800" layoutX="38.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10%" wrappingWidth="25.0" />
                            </children>
                         </Pane>
-                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #696969;">
+                        <Pane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #6969F9;">
                            <children>
                               <Text layoutX="36.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="22:00">
                                  <font>

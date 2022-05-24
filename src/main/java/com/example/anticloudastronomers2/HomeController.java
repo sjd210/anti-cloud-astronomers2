@@ -50,7 +50,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay1(ActionEvent event) throws IOException {
         resetButtons();
-        Day1Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day1Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 0;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -59,7 +59,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay2(ActionEvent event) throws IOException {
         resetButtons();
-        Day2Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day2Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 1;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -68,7 +68,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay3(ActionEvent event) throws IOException {
         resetButtons();
-        Day3Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day3Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 2;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -77,7 +77,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay4(ActionEvent event) throws IOException {
         resetButtons();
-        Day4Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day4Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 3;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -86,7 +86,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay5(ActionEvent event) throws IOException {
         resetButtons();
-        Day5Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day5Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 4;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -95,7 +95,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay6(ActionEvent event) throws IOException {
         resetButtons();
-        Day6Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day6Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 5;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -104,7 +104,7 @@ public class HomeController implements Initializable {
     @FXML
     private void btnDay7(ActionEvent event) throws IOException {
         resetButtons();
-        Day7Button.setStyle("-fx-background-color: #7a7a7a;");
+        Day7Button.setStyle("-fx-background-color: #4a4aFF;");
         daysAhead = 6;
         MainScroll.setHvalue(0);
         softRefresh();
