@@ -62,6 +62,7 @@ public class CalenderObjController implements Initializable {
     private String[] planets = new String[]{"Mercury.png","Venus.png","Mars.png","Jupiter.png","Saturn.png", "Uranus.png"};
 
     private boolean[] planet;
+    private String currentMoon;
 
     public CalenderObjController(LocalDateTime d, AstroWeatherAPI w){
         myDate = d;
@@ -71,10 +72,10 @@ public class CalenderObjController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DayLabel.setText(myDate.getMonth()+" "+myDate.getDayOfMonth());
-        String w = myWeather.get((int) ChronoUnit.DAYS.between(LocalDate.now(), myDate.toLocalDate()),"moon_phase");
+        currentMoon = myWeather.get((int) ChronoUnit.DAYS.between(LocalDate.now(), myDate.toLocalDate()),"moon_phase");
         Image image = null;
         try {
-            image = new Image(new FileInputStream("src/main/resources/com/example/MoonPhases/"+moonPhases.get(w)));
+            image = new Image(new FileInputStream("src/main/resources/com/example/MoonPhases/"+moonPhases.get(currentMoon)));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -143,5 +144,15 @@ public class CalenderObjController implements Initializable {
         if (planet[5]) {
             PlanetText.setText("Uranus");
         }
+    }
+
+    @FXML
+    private void EnterMoon() throws IOException {
+        PlanetText.setText(currentMoon);
+    }
+
+    @FXML
+    private void ExitMouse() throws IOException {
+        PlanetText.setText("");
     }
 }
