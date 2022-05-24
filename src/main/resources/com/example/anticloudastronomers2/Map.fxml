@@ -19,7 +19,7 @@
          <content>
             <ImageView pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../icons/Observatories.png" />
+                  <Image url="@../icons/Observatories.jpg" />
                </image>
                <viewport>
                   <Rectangle2D height="3000.0" width="2500.0" />
