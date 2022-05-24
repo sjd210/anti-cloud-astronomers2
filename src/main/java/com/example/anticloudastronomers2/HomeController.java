@@ -1,5 +1,6 @@
 package com.example.anticloudastronomers2;
 
+import javafx.css.Style;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.NumberFormat;
 import java.util.*;
 import java.util.concurrent.CyclicBarrier;
 
@@ -23,6 +25,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private javafx.scene.layout.BorderPane BorderPane;
+
+    private String defaultStyle;
 
     @FXML
     private void ScrollRefresh(ActionEvent event) throws IOException { //never runs, not sure how to make scrolling a scroll pane do an action.
@@ -33,8 +37,20 @@ public class HomeController implements Initializable {
 
     }
 
+    private void resetButtons() {
+        Day1Button.setStyle(defaultStyle);
+        Day2Button.setStyle(defaultStyle);
+        Day3Button.setStyle(defaultStyle);
+        Day4Button.setStyle(defaultStyle);
+        Day5Button.setStyle(defaultStyle);
+        Day6Button.setStyle(defaultStyle);
+        Day7Button.setStyle(defaultStyle);
+    }
+
     @FXML
     private void btnDay1(ActionEvent event) throws IOException {
+        resetButtons();
+        Day1Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 0;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -42,6 +58,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay2(ActionEvent event) throws IOException {
+        resetButtons();
+        Day2Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 1;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -49,6 +67,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay3(ActionEvent event) throws IOException {
+        resetButtons();
+        Day3Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 2;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -56,6 +76,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay4(ActionEvent event) throws IOException {
+        resetButtons();
+        Day4Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 3;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -63,6 +85,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay5(ActionEvent event) throws IOException {
+        resetButtons();
+        Day5Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 4;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -70,6 +94,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay6(ActionEvent event) throws IOException {
+        resetButtons();
+        Day6Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 5;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -77,6 +103,8 @@ public class HomeController implements Initializable {
 
     @FXML
     private void btnDay7(ActionEvent event) throws IOException {
+        resetButtons();
+        Day7Button.setStyle("-fx-background-color: #7a7a7a;");
         daysAhead = 6;
         MainScroll.setHvalue(0);
         softRefresh();
@@ -512,6 +540,12 @@ public class HomeController implements Initializable {
         try {
             refresh();
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        defaultStyle = Day7Button.getStyle();
+        try {
+            btnDay1(null);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

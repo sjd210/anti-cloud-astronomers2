@@ -12,6 +12,8 @@ public class Launcher extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("MainPane.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 335, 600);
+        stage.setMaxHeight(637);
+        stage.setMaxWidth(350);
         stage.setTitle("Anti-Cloud Astronomy");
         stage.setScene(scene);
         stage.show();

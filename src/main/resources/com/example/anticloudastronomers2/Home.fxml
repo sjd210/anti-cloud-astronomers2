@@ -17,7 +17,7 @@
          <content>
             <HBox prefHeight="110.0" prefWidth="597.0">
                <children>
-                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" text="Mon">
+                  <Button fx:id="Day1Button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnDay1" prefHeight="114.0" style="-fx-background-color: #7a7a7a;" text="Mon">
                      <graphic>
                         <ImageView fx:id="WeatherIcon1" fitHeight="81.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -90,7 +90,7 @@
          <content>
             <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0">
                <children>
-                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #283678;">
+                  <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="335.0" style="-fx-background-color: #345c7d;">
                      <children>
                         <ImageView fx:id="WeatherIcon" fitHeight="181.0" fitWidth="154.0" layoutX="90.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
                            <image>
