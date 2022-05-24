@@ -5,7 +5,7 @@ How to run code
  - Run IntelliJ Idea
  - File > Open... > Select Project File
  - Navigate to anti-cloud-astronomers2/src/main/java/com/example/anticloudastronomers2
- - Run program
+ - Run launcher class
 
 Libraries used
  - JavaFX
