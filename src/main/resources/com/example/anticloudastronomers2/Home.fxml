@@ -115,7 +115,7 @@
                            </font>
                         </Text>
                         <Line endX="335.0" startX="335.0" startY="369.0" />
-                        <Text fx:id="DayRating" fill="#3f8a28" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze" x="95.0">
+                        <Text fx:id="DayRating" fill="#58c434" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GOOD to stargaze" x="95.0">
                            <font>
                               <Font size="18.0" />
                            </font>
